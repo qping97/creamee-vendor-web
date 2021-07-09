@@ -95,6 +95,13 @@
                         </div>
                       </div>
 
+                      <div class="form-group row">
+                        <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Order Notes</label>
+                        <div class="col-sm-9">
+                          <textarea class="form-control" rows="3" placeholder="{{$order->order_notes}}" disabled></textarea>
+                        </div>
+                      </div>
+
                     </form>
                     </form>
                   </div>

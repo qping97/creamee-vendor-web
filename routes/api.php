@@ -521,7 +521,7 @@ Route::post('/placeorder', function (Request $request) {
         $saveorder['amount']=$request->input('amount');
         $saveorder['payment']=$request->input('payment');
         $saveorder['delivery_method']=$request->input('delivery_method');
-        $saveorder['delivery_fee']=5;
+        $saveorder['delivery_fee']=number_format(5, 2, '.', '');
         $saveorder['order_notes']=$request->input('order_notes');
         $newOrder=Order::create($saveorder);
        
@@ -853,7 +853,7 @@ Route::get('/order-history/{id}', function (Request $request, $customerId) {
 
         $customer = Customer::where('id', $customerId)->first();
 
-        $order = Order::where('customer_id',$customer->id)->get();
+        $order = Order::where('customer_id',$customer->id)->with('customers','product','product.vendor')->orderBy('created_at','DESC')->get();
         return response()->json([
             'message' => 'success',
             'order' => $order,
