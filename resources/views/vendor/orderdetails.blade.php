@@ -29,20 +29,20 @@
                     <form class="forms-sample">
                       <div class="form-group">
                         <label for="exampleInputName1">Name</label>
-                        <input type="text" class="form-control" value="{{$order->customers->name}}" disabled>
+                        <input type="text" class="form-control" value="{{$order->customer->name}}" disabled>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Email</label>
-                        <input type="email" class="form-control"  value="{{$order->customers->email}}" disabled>
+                        <input type="email" class="form-control"  value="{{$order->customer->email}}" disabled>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputName1">Contact Number</label>
-                        <input type="text" class="form-control" value="{{$order->customers->contact_no}}" disabled>
+                        <input type="text" class="form-control" value="{{$order->customer->contact_no}}" disabled>
                       </div>
 
                       <div class="form-group">
                         <label for="exampleInputName1">Address</label>
-                        <input type="text" class="form-control"  value="{{$order->customers->address}}" disabled>
+                        <input type="text" class="form-control"  value="{{$order->customer->address}}" disabled>
                       </div>
                       <br/>
                       <p class="card-description">Order Details</p>

@@ -853,13 +853,14 @@ Route::get('/order-history/{id}', function (Request $request, $customerId) {
 
         $customer = Customer::where('id', $customerId)->first();
 
-        $order = Order::where('customer_id',$customer->id)->with('customers','product','product.vendor')->orderBy('created_at','DESC')->get();
+        $order = Order::where('customer_id',$customer->id)->with('customer','product','product.vendor')->orderBy('created_at','DESC')->get();
         return response()->json([
             'message' => 'success',
             'order' => $order,
         ]);
     } catch (Exception $e) {
         error_log('Error: ' . $e->getMessage());
+        
     }
     
 });

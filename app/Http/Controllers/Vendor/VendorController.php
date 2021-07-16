@@ -73,13 +73,13 @@ class VendorController extends Controller
 
     public function orders(){
         $auth=Auth::guard('vendor')->id();
-        $order=Order::with('customers')->where('vendor_id',$auth)->orderBy('created_at','DESC')->get();
+        $order=Order::with('customer')->where('vendor_id',$auth)->orderBy('created_at','DESC')->get();
         return view('vendor.order',compact('order'));
 
     }
     
     public function getOrderDetails($id){ 
-        $order=Order::with('customers')->find($id);
+        $order=Order::with('customer')->find($id);
 
         $product=$order->with('product')->get();
 

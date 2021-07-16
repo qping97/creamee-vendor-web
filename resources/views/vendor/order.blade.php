@@ -40,8 +40,8 @@
             <tr>
                 <td>{{$a->id}}</td>
                 <td>{{$a->pickup_date}}</td>
-                <td>{{$a->customers->name}}</td>
-                <td>{{$a->customers->contact_no}}</td>
+                <td>{{$a->customer->name}}</td>
+                <td>{{$a->customer->contact_no}}</td>
                 <td>{{$a->delivery_method}}</td>
                 <td>{{$a->amount}}</td>
                 <td>{{$a->order_status}}</td>
